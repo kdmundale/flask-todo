@@ -19,17 +19,25 @@ def index():
 
     return render_template("index.html", todos=todos)
 
-    # if method=='POST':
-    # def new_todo():
-    #"""adds a new item to the todo list"""
-    # Take the input from the form
-    #new_item = request.form['action']
+
+@bp.route("/new", methods=['GET', 'POST'])
+def new_todo():
+    if request.method == 'POST':
+        now = datetime.timetz()
+        # """adds a new item to the todo list"""
+        # Take the input from the form
+        new_item = request.form['action']
     # Insert new description into the table as a new row
-    #cur = db.get_db().cursor()
-    # cur.execute("INSERT INTO todos (description) VALUE (%)",
-    # (new_item))
+        cur = db.get_db().cursor()
+        cur.execute("INSERT INTO todos (description, completed, created_at) VALUE (%,%,%)",
+                    (new_item, False, now))
+        cur.execute('SELECT * FROM todos')
+        todos = cur.fetchall()
+        cur.close()
 
     # return updated table with submit button
+    return render_template("index.html")
+
 
 @bp.route("/completed", methods=['GET', 'POST'])
 def show_completed():
