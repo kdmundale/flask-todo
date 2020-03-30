@@ -28,3 +28,26 @@ def index():
     # (new_item))
 
     # return updated table with submit button
+
+@bp.route("/completed", methods=['GET', 'POST'])
+def show_completed():
+    """View for specific completed tasks."""
+
+    cur = db.get_db().cursor()
+    cur.execute('SELECT * FROM todos WHERE completed = true')
+    todos = cur.fetchall()
+    cur.close()
+
+    return render_template("index.html", todos=todos)
+
+
+@bp.route("/unfinished", methods=['GET', 'POST'])
+def show_unfinished():
+    """View for specific unfinished tasks."""
+
+    cur = db.get_db().cursor()
+    cur.execute('SELECT * FROM todos WHERE completed = false')
+    todos = cur.fetchall()
+    cur.close()
+
+    return render_template("index.html", todos=todos)
