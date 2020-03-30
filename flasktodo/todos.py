@@ -1,4 +1,6 @@
-from flask import Blueprint, render_template
+from datetime import datetime
+
+from flask import Blueprint, render_template, request, session
 
 from . import db
 
@@ -17,14 +19,16 @@ def index():
 
     return render_template("index.html", todos=todos)
 
-    # if method=='POST':
-    # def new_todo():
-    #"""adds a new item to the todo list"""
-    # Take the input from the form
-    #new_item = request.form['action']
-    # Insert new description into the table as a new row
-    #cur = db.get_db().cursor()
-    # cur.execute("INSERT INTO todos (description) VALUE (%)",
-    # (new_item))
-
-    # return updated table with submit button
+    # if method == 'POST':
+    #     # Take the input from the form
+    #     new_item = request.form['action']
+    #     # Insert new description into the table as a new row
+    #     cur = db.get_db().cursor()
+    #     cur.execute("INSERT INTO todos (description, completed, created_at) VALUE (%,%,%)",
+    #                 (new_item, False, NOW()))
+    # # return updated table with submit button
+    #     cur.execute('SELECT * FROM todos')
+    #     todos = cur.fetchall()
+    #     cur.close()
+    #
+    #     return render_template("index.html", todos=todos)

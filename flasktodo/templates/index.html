@@ -5,15 +5,16 @@
 
   <ul>
     {% for todo in todos %}
-      <li class="{{ "completed" if todo['completed'] }}">
+      <li class= "{{ "completed" if todo['completed'] }}">
         {{ todo['description'] }}
       </li>
     {% endfor %}
   </ul>
-
-<form method="post">
-        <label for="action">What needs to be done?</label>
-        <input class="act" type="text" name="action" id="action" />
-        <input class="act_button" type="submit" value="Submit" />
-    </form>
+<div>
+  <form method="post">
+      <label for="action">What needs to be done?</label>
+      <input class="act" type="text" name="action" id = "action" />
+      <input class="act_button" type="submit" value="Submit" />
+</form>
+</div>
 {% endblock %}
