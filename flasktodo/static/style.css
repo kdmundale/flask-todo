@@ -25,3 +25,18 @@ li.completed {
   text-decoration: line-through;
 }
 
+.filter {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-button {
+  text-decoration: none;
+  padding: 15px;
+  background-color: #eee;
+  margin: 10px;
+}
+
+.nav-button:hover {
+  background-color: #ccc;
+}
