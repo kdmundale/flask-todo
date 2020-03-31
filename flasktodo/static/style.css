@@ -53,3 +53,11 @@ li.completed {
   padding: 10px;
   margin: 10px;
 }
+
+.edit_button {
+  text-decoration: none;
+  background-color: #eee;
+  font-size: 15px;
+  padding: 10px;
+  margin: 10px;
+}

@@ -16,7 +16,6 @@
   <ul>
     {% for todo in todos %}
 
-      <a class="side" href="{{ url_for('todos.update', id = todo['id']) }}">Edit</a>
 
       <li class="{{ 'completed' if todo['completed'] }} task-list">
       {{ todo['description'] }}
@@ -27,6 +26,8 @@
         <form method="post" action="{{ url_for('todos.delete', id=todo['id']) }}">
           <input class="task-button" name="delete" type="submit" value="Delete"/>
         </form>
+        <a class="edit_button" href="{{ url_for('todos.update', id = todo['id']) }}">Edit Todo</a>
+
       </li>
     {% endfor %}
   </ul>
