@@ -1,4 +1,6 @@
 import os
+import psycopg2
+import psycopg2.extras
 from datetime import datetime
 from flask import Blueprint, render_template, request, session, g
 
@@ -11,24 +13,22 @@ bp = Blueprint("todos", __name__)
 @bp.route("/", methods=['GET', 'POST'])
 def index():
     """View for home page which shows list of to-do items."""
+
     cur = db.get_db().cursor()
     cur.execute('SELECT * FROM todos')
     todos = cur.fetchall()
 
     if request.method == 'POST':
         new_task = request.form['action']
-        if new_task == True:
-
+        if new_task =='':
+            pass
+        else:
             cur.execute('INSERT INTO todos (description, completed, created_at) VALUES (%s, %s, %s)',
-                        (new_task, False, datetime.now()))
+                    (new_task, False, datetime.now()))
             g.db.commit()
-
             cur.execute('SELECT * FROM todos')
             todos = cur.fetchall()
-
             cur.close()
-        else:
-            pass
 
     return render_template("index.html", todos=todos)
 
