@@ -2,7 +2,7 @@ import os
 import psycopg2
 import psycopg2.extras
 from datetime import datetime
-from flask import Blueprint, render_template, request, session, g
+from flask import Blueprint, render_template, request, session, g, redirect, url_for 
 
 from . import db
 
@@ -32,7 +32,6 @@ def index():
 
     return render_template("index.html", todos=todos)
 
-
 @bp.route("/completed", methods=['GET', 'POST'])
 def show_completed():
     """View for specific completed tasks."""
@@ -55,3 +54,24 @@ def show_unfinished():
     cur.close()
 
     return render_template("index.html", todos=todos)
+
+@bp.route("/edit", methods=['GET', 'POST'])
+def update():
+    id = request.args['id']
+    cur = db.get_db().cursor()
+    cur.execute('SELECT description FROM todos WHERE id = (%s)',
+            (id,))
+    description = cur.fetchone()
+    cur.close()
+
+    if request.method == 'POST':
+        new_description = request.form['description']
+        cur = db.get_db().cursor()
+        cur.execute(
+            "UPDATE todos SET description=(%s)"
+            " WHERE id=(%s)",
+            (new_description, id,));
+        g.db.commit()
+        return redirect(url_for('todos.index'))
+
+    return render_template("edit.html", description=description)

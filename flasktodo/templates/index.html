@@ -16,8 +16,9 @@
   <ul>
     {% for todo in todos %}
       <li class= "{{ "completed" if todo['completed'] }}">
+      {{ todo['id'] }}
       {{ todo['description'] }}
-      <a class="side" href="">Edit</a>
+      <a class="side" href="{{ url_for('todos.update', id = todo['id']) }}">Edit</a>
       <a class="side" href="">Delete</a>
       <a class="side" href="">Complete</a>
 
