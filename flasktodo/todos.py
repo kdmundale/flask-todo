@@ -1,3 +1,6 @@
+import os
+import psycopg2
+import psycopg2.extras
 from datetime import datetime
 
 from flask import Blueprint, render_template, request, session, g, redirect, url_for
@@ -25,22 +28,18 @@ def index():
 
     cur = db.get_db().cursor()
 
-    create_new_task(cur)
-    # if request.method == 'POST':
-    #     if 'action' in request.form:
-    #
-    #         new_task = request.form['action']
-    #
-    #         cur.execute('INSERT INTO todos (description, completed, created_at) VALUES (%s, %s, %s)',
-    #         (new_task, False, datetime.now()))
-    #         g.db.commit()
-
-
     cur.execute('SELECT * FROM todos')
     todos = cur.fetchall()
 
-
-    cur.close()
+    if request.method == 'POST':
+        new_task = request.form['action']
+        if new_task =='':
+            pass
+        else:
+            create_new_task(cur)
+            cur.execute('SELECT * FROM todos')
+            todos = cur.fetchall()
+            cur.close()
 
     return render_template("index.html", todos=todos)
 
@@ -106,7 +105,7 @@ def show_unfinished():
     cur = db.get_db().cursor()
 
     create_new_task(cur)
-    
+
     cur.execute('SELECT * FROM todos WHERE completed = false')
     todos = cur.fetchall()
     cur.close()
