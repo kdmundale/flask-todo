@@ -17,6 +17,10 @@
     {% for todo in todos %}
       <li class= "{{ "completed" if todo['completed'] }}">
       {{ todo['description'] }}
+      <a class="side" href="">Edit</a>
+      <a class="side" href="">Delete</a>
+      <a class="side" href="">Complete</a>
+
       </li>
     {% endfor %}
   </ul>
