@@ -40,3 +40,16 @@ li.completed {
 .nav-button:hover {
   background-color: #ccc;
 }
+
+.task-list {
+  display: flex;
+}
+
+.task-button {
+  font-size: 18px;
+}
+
+.task-button * {
+  padding: 10px;
+  margin: 10px;
+}

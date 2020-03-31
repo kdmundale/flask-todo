@@ -15,8 +15,16 @@
 
   <ul>
     {% for todo in todos %}
-      <li class= "{{ "completed" if todo['completed'] }}">
+
+      <li class="{{ 'completed' if todo['completed'] }} task-list">
       {{ todo['description'] }}
+        <form method="post" action="{{ url_for('todos.switch', id=todo['id']) }}">
+          <input class="task-button" name="completed" type="submit" value="Completed"/>
+        </form>
+
+        <form method="post" action="{{ url_for('todos.delete', id=todo['id']) }}">
+          <input class="task-button" name="delete" type="submit" value="Delete"/>
+        </form>
       </li>
     {% endfor %}
   </ul>
