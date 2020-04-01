@@ -20,7 +20,7 @@ body {
   padding: 2rem;
 }
 
-li.completed {
+span.completed {
   color: #666666;
   text-decoration: line-through;
 }
@@ -31,9 +31,14 @@ li.completed {
 }
 
 .nav-button {
+  color: black;
   text-decoration: none;
   padding: 15px;
   background-color: #eee;
+  border: 1px solid darkgrey;
+  border-radius: 20%;
+  width: 150px;
+  text-align: center;
   margin: 10px;
 }
 
@@ -41,8 +46,24 @@ li.completed {
   background-color: #ccc;
 }
 
+li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.todo-block {
+  width: 80%;
+  border: 1px solid black;
+}
+
 .task-list {
   display: flex;
+}
+.todo-block{
+  display: block;
 }
 
 .task-button {
@@ -55,9 +76,30 @@ li.completed {
 }
 
 .edit_button {
+  color: black;
+  border: 1px solid gray;
+  border-radius: 20%;
   text-decoration: none;
-  background-color: #eee;
-  font-size: 15px;
-  padding: 10px;
-  margin: 10px;
+  font-size: 10px;
+  padding: 5px;
+  margin: 0;
+}
+
+.act {
+  border: 1px solid grey;
+  font-size: 18px;
+  width: 95%;
+  padding: 5px;
+}
+span {
+  border: 1px solid grey;
+  width: 60%;
+  padding: 5px;
+}
+
+.new-todo {
+  display: flex;
+  width: 80%;
+  flex-direction: row;
+  margin-top: 30px;
 }
