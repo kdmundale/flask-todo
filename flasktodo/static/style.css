@@ -46,7 +46,7 @@ span.completed {
   padding: 15px;
   background-color: #eee;
   border: 1px solid darkgrey;
-  border-radius: 20%;
+  border-radius: 10%;
   width: 150px;
   text-align: center;
   margin: 10px;
@@ -77,22 +77,32 @@ li {
 }
 
 .task-button {
-  font-size: 18px;
+  width:85px;
+  color: black;
+  font-size: 14px;
+  margin: 3px;
 }
 
-.task-button * {
-  padding: 10px;
-  margin: 10px;
+.task-button:hover{
+  background-color: darkgrey;
+  color: white;
 }
 
 .edit_button {
+  text-align: center;
   color: black;
-  border: 1px solid gray;
-  border-radius: 20%;
+  border: 1px solid lightgrey;
+  border-radius: 10%;
   text-decoration: none;
-  font-size: 14px;
-  padding: 5px;
+  font-size: 12px;
+  padding: 2px;
+  width: 85px;
   margin: 0;
+}
+
+.edit_button:hover {
+  background-color: darkgrey;
+  color: white;
 }
 
 .act {
@@ -135,7 +145,8 @@ span {
   text-align: center;
   font-size: 30px;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid darkgrey;
+  border-radius: 10%;
   margin: 10px;
 }
 
@@ -147,14 +158,20 @@ span {
  input.save-button {
    font-size: 14px;
    background-color: red;
-   border-radius: 20%;
+   border-radius: 10%;
    color: white;
    width: 150px;
    padding: 10px;
-   margin: 20px;
+   margin-top: 20px;
+ }
+
+ .save-button:hover{
+   background-color: darkred;
  }
 
  .return {
+   border-radius: 10%;
+   background-color: aliceblue;
    width: 70px;
    padding: 5px;
    margin: 10px;
