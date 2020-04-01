@@ -34,6 +34,10 @@ span.completed {
   color: #666666;
   text-decoration: line-through;
 }
+h1 {
+  font-size: 34px;
+  font-style: italic;
+}
 
 .filter {
   display: flex;
@@ -41,6 +45,7 @@ span.completed {
 }
 
 .nav-button {
+  text-align: center;
   font-size: 20px;
   color: black;
   text-decoration: none;
@@ -81,6 +86,13 @@ li {
 }
 .todo-block{
   display: block;
+}
+
+.action {
+  font-size: 22px;
+  margin: 5px 5px 5px 0;
+  padding:5px 5px 5px 0;
+  font-style: italic;
 }
 
 .task-button {
