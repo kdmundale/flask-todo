@@ -1,16 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method="post" for="description">
-  <label for="body">edit todo</label>
-  <textarea name="description" id="description">{{ request.form['description'] or description['description']}}</textarea>
-  <input type="submit" value="Save">
+<div class="edit-block">
+<form class="edit" method="post" for="description">
+  <label class="edit-label" for="body">Edit Todo</label>
+  <textarea class="edit-text" name="description" id="description">{{ request.form['description'] or description['description']}}</textarea>
+  <input class="save-button" type="submit" value="Save New Changes">
 </form>
+
+<button class="return" onclick="goBack()">Go Back</button>
+
+</div>
 <script>
   function goBack() {
     window.history.back()
   }
   </script>
-  <button onclick="goBack()">Go Back</button>
 
   {% endblock %}
