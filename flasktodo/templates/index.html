@@ -13,7 +13,7 @@
   </nav>
 
 <div class="todo-block">
-  <ul>
+  <ul class="list">
     {% for todo in todos %}
 
      <li><a class="edit_button" href="{{ url_for('todos.update', id = todo['id']) }}">Edit Todo</a>

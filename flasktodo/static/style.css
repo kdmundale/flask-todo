@@ -41,6 +41,7 @@ span.completed {
 }
 
 .nav-button {
+  font-size: 20px;
   color: black;
   text-decoration: none;
   padding: 15px;
@@ -56,15 +57,21 @@ span.completed {
   background-color: #ccc;
 }
 
+ul.list {
+  display: flex;
+  flex-direction: column;
+  margin-left: -20px;
+  margin-right: 15px;
+}
 li {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  margin: 10px;
+  justify-content: space-around;
 }
 
 .todo-block {
+  display: block;
   width: 80%;
   border: 1px solid black;
 }
@@ -77,6 +84,8 @@ li {
 }
 
 .task-button {
+  border-radius: 10%;
+  background-color: aliceblue;
   width:85px;
   color: black;
   font-size: 14px;
@@ -89,12 +98,13 @@ li {
 }
 
 .edit_button {
+  background-color: aliceblue;
   text-align: center;
   color: black;
   border: 1px solid lightgrey;
   border-radius: 10%;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 14px;
   padding: 2px;
   width: 85px;
   margin: 0;
