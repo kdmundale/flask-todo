@@ -4,16 +4,16 @@
 {% block content %}
 
 <h1>log in</h1>
-<div class="auth-page"
+<div class="auth-page">
   <form class="auth-page-form" method="post">
     <label class="auth" for="email">Email</label>
     <input class="auth" name="email" id="email" required>
     <label class="auth" for="password">Password</label>
     <input class="auth" type="password" name="password" id="password" required>
-</div>
     <input class="save-button" type="submit" value="Log In">
     <button class="return" onclick="goBack()">Go Back</button>
   </form>
+</div>
   <script>
     function goBack() {
       window.history.back()
