@@ -43,10 +43,6 @@ nav {
   justify-content: space-between;
 }
 
-h2{
-  font-size: 30px;
-}
-
 span.completed {
   color: #666666;
   text-decoration: line-through;
@@ -99,6 +95,8 @@ footer {
 .filter {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
   justify-content: space-around;
   list-style-type: none;
   padding-inline-start: 0px;
@@ -248,9 +246,9 @@ span {
   padding-top: px;
   width: 100%;
   height: 30px;
-
 }
- input.save-button {
+
+.save-button {
    display: block;
    font-variant: small-caps;
    font-size: 14px;
@@ -283,10 +281,6 @@ span {
    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
  }
 
-.auth-page-header{
-  display: block;
-  margin: 90px 10px 10px 10px;
-}
 .auth-page-form {
   display: flex;
   flex-direction: column;
