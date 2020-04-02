@@ -92,7 +92,8 @@ footer {
 
 .login-button:hover {
   color: black;
-  background-color: lightgrey;
+  background-color: #97a2c4;
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
 }
 
 .filter {
@@ -120,8 +121,9 @@ footer {
 }
 
 .nav-button:hover {
-  background-color: #ccc;
+  background-color: #97a2c4;
   color: black;
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
 }
 
 ul.list {
@@ -174,8 +176,9 @@ li {
 }
 
 .task-button:hover{
-  background-color: darkgrey;
+  background-color: #97a2c4;
   color: black;
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
 }
 
 .edit_button {
@@ -193,8 +196,9 @@ li {
 }
 
 .edit_button:hover {
-  background-color: darkgrey;
+  background-color: #97a2c4;
   color: black;
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
 }
 
 .act {
@@ -270,8 +274,9 @@ span {
  }
 
  .save-button:hover{
-   background-color: lightgrey;
+   background-color: #97a2c4;
    color: black;
+   box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
  }
 
  .return {
@@ -283,8 +288,9 @@ span {
  }
 
  .return:hover {
-   background-color: darkgrey;
+   background-color: #97a2c4;
    color: white;
+   box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
  }
 
 .auth-page-header{
