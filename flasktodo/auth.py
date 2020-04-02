@@ -17,17 +17,17 @@ def register():
         error = None
 
         if not email:
-            error = 'Email is required.'
+            error = 'email is required'
         elif not password:
-            error = 'Password is required.'
+            error = 'password is required'
         else:
             cur.execute(
-            'SELECT id FROM users WHERE email = %s', (email,)
+                'SELECT id FROM users WHERE email = %s', (email,)
             )
             result = cur.fetchone()
 
             if result is not None:
-                error = 'Email not valid.'
+                error = 'email not valid'
 
         if error is None:
             cur.execute(
@@ -57,9 +57,9 @@ def login():
 
         user = cur.fetchone()
         if user is None:
-            error = 'Incorrect login credentials.'
+            error = ' incorrect login credentials '
         elif not check_password_hash(user['password'], password):
-            error = 'Incorrect login credentials.'
+            error = ' incorrect login credentials '
 
         if error is None:
             session.clear()
@@ -69,6 +69,7 @@ def login():
         flash(error)
 
     return render_template('auth/login.html', message=error)
+
 
 @bp.before_app_request
 def load_logged_in_user():
@@ -82,6 +83,7 @@ def load_logged_in_user():
             'SELECT * FROM users WHERE id = %s', (user_id,)
         )
         g.user = cur.fetchone()
+
 
 @bp.route('/logout')
 def logout():
