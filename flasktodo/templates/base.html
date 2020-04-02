@@ -16,6 +16,9 @@
     {% else %}
       <li><a class="login-button" href="{{ url_for('auth.register') }}">register</a>
       <li><a class="login-button" href="{{ url_for('auth.login') }}">log in</a>
+        {% for message in get_flashed_messages() %}
+        <div class ="flash">{{ message }}</div>
+        {% endfor %}
     {% endif %}
     </ul>
   </div>
@@ -23,6 +26,7 @@
   <header>
     {% block header %}{% endblock %}
   </header>
+
   {% block content %}{% endblock %}
   </section>
   <footer>

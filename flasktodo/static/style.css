@@ -89,7 +89,7 @@ footer {
 .login-button:hover {
   color: black;
   background-color: #97a2c4;
-  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .9);
 }
 
 .filter {
@@ -281,6 +281,7 @@ span {
    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
  }
 
+
 .auth-page-form {
   display: flex;
   flex-direction: column;
@@ -298,4 +299,16 @@ span {
   font-size: 18px;
   margin: 10px;
   width: 300px;
+}
+
+.flash {
+  font-size: 24px;
+  font-variant: small-caps;
+  background-color: rgb(53, 76, 171);
+  color: rgb(240, 142, 38);
+  border: 1px solid darkgrey;
+  border-radius: 10%;
+  padding: 10px;
+  margin: 10px;
+  text-decoration: underline;
 }
