@@ -66,6 +66,11 @@ h1 {
   text-decoration: none;
 }
 
+.login-button:hover {
+  color: black;
+  background-color: lightgrey;
+}
+
 .filter {
   display: flex;
   flex-direction: row;
@@ -92,6 +97,7 @@ h1 {
 
 .nav-button:hover {
   background-color: #ccc;
+  color: black;
 }
 
 ul.list {
@@ -135,7 +141,8 @@ li {
   border: 1px solid darkgrey;
   border-radius: 10%;
   background-color: #5680e9;
-  width:85px;
+  font-variant: small-caps;
+  width:90px;
   color: white;
   font-size: 14px;
   margin: 3px;
@@ -154,6 +161,7 @@ li {
   border-radius: 10%;
   text-decoration: none;
   font-size: 14px;
+  font-variant: small-caps;
   padding: 2px;
   width: 85px;
   margin: 0;
@@ -236,7 +244,8 @@ span {
  }
 
  .save-button:hover{
-   background-color: darkred;
+   background-color: lightgrey;
+   color: black;
  }
 
  .return {
