@@ -3,9 +3,9 @@
 {% block content %}
 <div class="edit-block">
 <form class="edit" method="post" for="description">
-  <label class="edit-label" for="body">Edit Todo</label>
+  <h1>edit todo</h1>
   <textarea class="edit-text" name="description" id="description">{{ request.form['description'] or description['description']}}</textarea>
-  <input class="save-button" type="submit" value="Save New Changes">
+  <input class="save-button" type="submit" value="save new changes">
 </form>
 
 <button class="return" onclick="goBack()">Go Back</button>

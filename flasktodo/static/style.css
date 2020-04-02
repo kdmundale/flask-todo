@@ -230,8 +230,7 @@ span {
 }
 
 .edit-block {
-  text-align: center;
-  border: 1px solid black;
+  text-align: left;
   display: block;
   margin: 0;
   flex-direction: row;
@@ -240,25 +239,16 @@ span {
 .edit {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.edit-label {
-  color: white;
-  background-color: grey;
-  text-align: center;
-  font-size: 30px;
-  padding: 10px;
-  border: 1px solid darkgrey;
-  border-radius: 10%;
-  margin: 10px;
 }
 
 .edit-text {
   font-size: 18px;
-  padding-top: 15px;
-  width: 85%;
+  padding-left: 10px;
+  margin-left: 10px;
+  padding-top: px;
+  width: 100%;
+  height: 30px;
+
 }
  input.save-button {
    display: block;
