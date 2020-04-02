@@ -11,8 +11,8 @@
     <div class="login-box">
     <ul class="login-menu">
     {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <li><a class="login-button" href="{{ url_for('auth.logout') }}">log Out</a>
+      <li><span class="username">{{ g.user['email'] }}</span>
+      <li><a class="login-button" href="{{ url_for('auth.logout') }}">log out</a>
     {% else %}
       <li><a class="login-button" href="{{ url_for('auth.register') }}">register</a>
       <li><a class="login-button" href="{{ url_for('auth.login') }}">log in</a>

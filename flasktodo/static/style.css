@@ -92,6 +92,27 @@ footer {
   box-shadow: 0 5px 15px rgba(145, 92, 182, .9);
 }
 
+span.username{
+  border: none;
+  font-size: 38px;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: rgb(20, 94, 199);
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+  width:auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 60px;
+}
+
 .filter {
   display: flex;
   flex-direction: row;
@@ -290,7 +311,7 @@ span {
 .auth-page {
   background-color: #c1c8e4;
   display: flex;
-  margin-top: 50px;
+  margin-top: 20px;
   flex-direction: column;
   padding-bottom: 20px;
 }
@@ -302,13 +323,21 @@ span {
 }
 
 .flash {
-  font-size: 24px;
+  font-size: 26px;
   font-variant: small-caps;
+  font-weight: bold;
   background-color: rgb(53, 76, 171);
-  color: rgb(240, 142, 38);
+  color: rgb(250, 233, 77);
+  text-shadow:
+    0 0 5px rgb(60, 91, 176),
+    0 0 10px rgb(60, 91, 176),
+    0 0 20px rgb(60, 91, 176),
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
   border: 1px solid darkgrey;
-  border-radius: 10%;
-  padding: 10px;
-  margin: 10px;
-  text-decoration: underline;
+  padding: 5px 10px 5px 10px;
+  margin: 5px;
 }
