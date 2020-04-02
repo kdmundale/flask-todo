@@ -1,15 +1,22 @@
 {% extends 'base.html' %}
-
-{% block header %}
-  <h1>{% block title %}Log In{% endblock %}</h1>
-{% endblock %}
+{% block header %}{% endblock %}
 
 {% block content %}
-  <form method="post">
-    <label for="email">Email</label>
-    <input name="email" id="email" required>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
-    <input type="submit" value="Log In">
+
+<h2 class="auth-page-header">Log In</h2>
+<div class="auth-page"
+  <form class="auth-page-form" method="post">
+    <label class="auth" for="email">Email</label>
+    <input class="auth" name="email" id="email" required>
+    <label class="auth" for="password">Password</label>
+    <input class="auth" type="password" name="password" id="password" required>
+</div>
+    <input class="save-button" type="submit" value="Log In">
+    <button class="return" onclick="goBack()">Go Back</button>
   </form>
+  <script>
+    function goBack() {
+      window.history.back()
+    }
+    </script>
 {% endblock %}
