@@ -6,7 +6,6 @@ body {
   width:100%;
   font-family: Helvetica, Arial, sans-serif;
   min-height: 100vh;
-
 }
 
 .content {
@@ -51,7 +50,7 @@ h1 {
   background-color: #5ab9ea;
   padding-inline-start: 0px;
   display: flex;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid darkblue;
   flex-direction: row;
   align-items: flex-start;
 }
@@ -127,7 +126,8 @@ li {
   display: flex;
 }
 .todo-block{
-  display: block;
+  border-top: 2px solid darkblue;
+  border-bottom: 2px solid darkblue;
 }
 
 .action {
