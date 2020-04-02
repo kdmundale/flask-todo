@@ -4,7 +4,6 @@
   <h1>A Simple To-do Application</h1>
 
   <nav class="index-view">
-    <h2>View To-dos:</h2>
     <ul class="filter">
       <li><a href="{{ url_for('todos.show_completed') }}" class="nav-button">completed</a></li>
       <li><a href="{{ url_for('todos.show_unfinished') }}" class="nav-button">unfinished</a></li>
@@ -41,7 +40,7 @@
   <form class="new-todo-form" method="post">
       <label class="action" for="action">What needs to be done?</label>
       <input class="act" type="text" name="action" id = "action" />
-      <input class="save-button" type="submit" value="Submit" />
+      <input class="save-button" type="submit" value="submit" />
 </form>
 </div>
 {% endblock %}

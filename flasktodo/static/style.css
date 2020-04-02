@@ -3,15 +3,17 @@
 }
 body {
   display: inline-block;
-  width:80%;
+  width:100%;
   font-family: Helvetica, Arial, sans-serif;
   min-height: 100vh;
-  padding: 2rem;
+
 }
 
 .content {
+  background-color: #84ceeb;
   display: inline-block;
-  margin: 0;
+  width: 100%;
+  margin-top: 50px 10px 50px 10px;
 }
 
 nav {
@@ -38,13 +40,15 @@ h1 {
 .login-box {
   display: block;
   position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 100&;
+  width:100%;
+  top: 0px;
+  left: 0px;
+  margin: 10px;
+  width: 100%;
 }
 
 .login-menu {
-  background-color: aliceblue;
+  background-color: #5ab9ea;
   padding-inline-start: 0px;
   display: flex;
   border-bottom: 2px solid black;
@@ -53,9 +57,10 @@ h1 {
 }
 .login-button {
   font-variant: small-caps;
-  background-color: blue;
+  background-color: #8860d0;
   color: white;
-  border: 1px solid grey;
+  border: 1px solid darkgrey;
+  border-radius: 10%;
   padding: 10px;
   margin: 10px;
   text-decoration: none;
@@ -66,7 +71,6 @@ h1 {
   flex-direction: row;
   justify-content: space-around;
   list-style-type: none;
-  margin: 15px;
   padding-inline-start: 0px;
 
 }
@@ -75,10 +79,10 @@ h1 {
   text-align: center;
   font-size: 24px;
   font-variant: small-caps;
-  color: black;
+  color: white;
   text-decoration: none;
   padding: 5px;
-  background-color: #eee;
+  background-color: #5680e9;
   border: 1px solid darkgrey;
   border-radius: 10%;
   width: 150px;
@@ -104,7 +108,7 @@ li {
 
 .todo-block {
   display: flex;
-  background-color: lightyellow;
+  background-color: #5ab9ea;
   flex-direction: column;
   width: 100%;
   margin: 0;
@@ -128,24 +132,25 @@ li {
 }
 
 .task-button {
+  border: 1px solid darkgrey;
   border-radius: 10%;
-  background-color: aliceblue;
+  background-color: #5680e9;
   width:85px;
-  color: black;
+  color: white;
   font-size: 14px;
   margin: 3px;
 }
 
 .task-button:hover{
   background-color: darkgrey;
-  color: white;
+  color: black;
 }
 
 .edit_button {
-  background-color: aliceblue;
+  background-color: #5680e9;
   text-align: center;
-  color: black;
-  border: 1px solid lightgrey;
+  color: white;
+  border: 1px solid darkgrey;
   border-radius: 10%;
   text-decoration: none;
   font-size: 14px;
@@ -156,7 +161,7 @@ li {
 
 .edit_button:hover {
   background-color: darkgrey;
-  color: white;
+  color: black;
 }
 
 .act {
@@ -167,7 +172,7 @@ li {
 }
 
 .index-view {
-  margin: 20px;
+  width: 100%;
 }
 span {
   border: 1px solid grey;
@@ -220,8 +225,9 @@ span {
 }
  input.save-button {
    display: block;
+   font-variant: small-caps;
    font-size: 14px;
-   background-color: red;
+   background-color: #8860d0;
    border-radius: 10%;
    color: white;
    width: 150px;
@@ -243,17 +249,17 @@ span {
 
 .auth-page-header{
   display: block;
-  margin: 10px;
+  margin: 90px 10px 10px 10px;
 }
 .auth-page-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .auth-page {
-  background-color: lightyellow;
+  background-color: #c1c8e4;
   display: flex;
+  margin-top: 50px;
   flex-direction: column;
   padding-bottom: 20px;
 }
