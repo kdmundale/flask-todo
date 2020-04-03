@@ -1,4 +1,5 @@
 import pytest
+import os
 
 from flasktodo import create_app
 from flasktodo import db
@@ -33,4 +34,3 @@ def runner(app):
     """Using test app, create and return a CLI runner object."""
 
     return app.test_cli_runner()
-
