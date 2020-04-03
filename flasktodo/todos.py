@@ -10,15 +10,22 @@ from . import db
 
 bp = Blueprint("todos", __name__)
 
-#Function for creating a new task in the DB
+# Function for creating a new task in the DB
+
+
 def create_new_task(cur):
     if request.method == 'POST':
         if 'action' in request.form:
 
+            user_id = session.get('user_id')
+
+            if user_id == None:
+                user_id = 1
+
             new_task = request.form['action']
 
-            cur.execute('INSERT INTO todos (description, completed, created_at) VALUES (%s, %s, %s)',
-            (new_task, False, datetime.now()))
+            cur.execute('INSERT INTO todos (description, completed, created_at, user_id) VALUES (%s, %s, %s, %s)',
+                        (new_task, False, datetime.now(), user_id))
             g.db.commit()
 
 
@@ -33,7 +40,7 @@ def index():
 
     if request.method == 'POST':
         new_task = request.form['action']
-        if new_task =='':
+        if new_task == '':
             pass
         else:
             create_new_task(cur)
@@ -42,6 +49,7 @@ def index():
             cur.close()
 
     return render_template("index.html", todos=todos)
+
 
 @bp.route("/switch", methods=('GET', 'POST'))
 def switch():
@@ -53,9 +61,9 @@ def switch():
         cur = db.get_db().cursor()
 
         cur.execute(
-         'UPDATE todos SET completed=(%s)'
-         'WHERE id = (%s)',
-         ('True', id));
+            'UPDATE todos SET completed=(%s)'
+            'WHERE id = (%s)',
+            ('True', id))
 
         g.db.commit()
 
@@ -63,18 +71,19 @@ def switch():
 
     return redirect(url_for('todos.index'))
 
+
 @bp.route("/delete", methods=('GET', 'POST'))
 def delete():
 
-    if request.method =='POST':
+    if request.method == 'POST':
         id = request.args['id']
 
         cur = db.get_db().cursor()
 
         cur.execute(
-         'DELETE FROM todos '
-         'WHERE id = (%s)',
-         (id,));
+            'DELETE FROM todos '
+            'WHERE id = (%s)',
+            (id,))
 
         g.db.commit()
 
@@ -112,12 +121,13 @@ def show_unfinished():
 
     return render_template("index.html", todos=todos)
 
+
 @bp.route("/edit", methods=['GET', 'POST'])
 def update():
     id = request.args['id']
     cur = db.get_db().cursor()
     cur.execute('SELECT description FROM todos WHERE id = (%s)',
-            (id,))
+                (id,))
     description = cur.fetchone()
     cur.close()
 
@@ -127,7 +137,7 @@ def update():
         cur.execute(
             "UPDATE todos SET description=(%s)"
             " WHERE id=(%s)",
-            (new_description, id,));
+            (new_description, id,))
         g.db.commit()
         return redirect(url_for('todos.index'))
 

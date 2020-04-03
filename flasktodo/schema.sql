@@ -23,3 +23,6 @@ CREATE TABLE todos (
     -- Add Foreign Key to users table here
     user_id integer references users(id)
 );
+-- Create a generic user for not logged in posts
+INSERT INTO users ( email, password)
+    VALUES ('public', '');
